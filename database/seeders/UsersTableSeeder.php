@@ -11,8 +11,12 @@ class UsersTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+     public function run(): void
     {
-        \App\Models\User::factory(1)->create();
+        User::create([
+            'name' =>'test',
+            'email' =>'test@example.com',
+            'password'=>Hash::make('password'),
+        ]);
     }
 }
